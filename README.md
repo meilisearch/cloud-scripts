@@ -1,2 +1,5 @@
-# meilisearch-cloud-init
-Cloud init scripts for cloud provider agnostic configuration
+⚠️ WIP: meilisearch-cloud ⚠️
+
+# meilisearch-cloud
+
+Cloud scripts for cloud provider agnostic configuration
