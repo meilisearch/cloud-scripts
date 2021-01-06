@@ -4,7 +4,7 @@ export DEBIAN_FRONTEND=noninteractive
 echo "deb http://ftp.de.debian.org/debian sid main" >> /etc/apt/sources.list
 apt update -y
 apt upgrade -y
-apt install git curl ufw gcc make nginx certbot python-certbot-nginx qemu-utils gcc-10 -y
+apt install gcc make nginx certbot python-certbot-nginx qemu-utils gcc-10 -y
 
 # Install MeiliSearch v0.17.0
 wget --directory-prefix=/etc/meilisearch/ https://github.com/meilisearch/MeiliSearch/releases/download/v0.17.0/meilisearch.deb
