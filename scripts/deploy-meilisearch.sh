@@ -1,8 +1,8 @@
 # Copy MeiliSearch configuration scripts
 mkdir -p /var/opt/meilisearch/scripts/first-login
-git clone https://github.com/meilisearch/meilisearch-digital-ocean.git /tmp/meili-tmp
+git clone https://github.com/meilisearch/meilisearch-cloud.git /tmp/meili-tmp
 cd /tmp/meili-tmp
-git checkout v0.17.0
+# git checkout v0.17.0
 chmod 755 /tmp/meili-tmp/scripts/per-instance/*
 chmod 755 /tmp/meili-tmp/scripts/first-login/*
 chmod 755 /tmp/meili-tmp/scripts/MOTD/*
@@ -15,4 +15,4 @@ rm -rf /tmp/meili-tmp
 touch /var/opt/meilisearch/env
 echo "source /var/opt/meilisearch/env" >> /root/.bashrc
 echo "source /var/opt/meilisearch/env" >> /etc/skel/.bashrc
-echo "sh /var/opt/meilisearch/scripts/first-login/000-set-meili-env.sh" >> /root/.bashrc
+
