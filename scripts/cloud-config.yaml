@@ -7,7 +7,7 @@ package_upgrade: true
 
 users:
   - default
-  - name: foobar
+  - name: meilisearch
   - groups: sudo
 
 packages:  
