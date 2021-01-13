@@ -4,6 +4,17 @@ package_update: true
 
 package_upgrade: true
 
+
+users:
+  - default
+  - name: meilisearch
+  - sudo: ALL=(ALL) NOPASSWD:ALL
+  - ssh_import_id: root
+  - lock_passwd: True
+  - gecos: Ubuntu
+  - shell: /bin/bash
+  - groups: [sudo, adm, audio, cdrom, dialout, floppy, video, plugdev, dip, netdev]
+
 packages:  
   - git
   - curl
