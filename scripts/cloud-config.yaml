@@ -9,6 +9,8 @@ users:
   - default
   - name: meilisearch
   - groups: sudo
+  - sudo: ALL=(ALL) NOPASSWD:ALL
+  - ssh_import_id: root
 
 packages:  
   - git
