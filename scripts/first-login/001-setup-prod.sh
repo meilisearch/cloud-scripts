@@ -31,7 +31,7 @@ exit_with_message() {
 }
 
 configure_master_key() {
-    sudo cat << EOF >/etc/systemd/system/meilisearch.service
+    cat << EOF >/etc/systemd/system/meilisearch.service
 [Unit]
 Description=MeiliSearch
 After=systemd-user-sessions.service
@@ -45,8 +45,8 @@ Environment="MEILI_SERVER_PROVIDER=digital_ocean"
 [Install]
 WantedBy=default.target
 EOF
-sudo systemctl daemon-reload
-sudo systemctl restart meilisearch
+systemctl daemon-reload
+systemctl restart meilisearch
 }
 
 setup_own_ssl() {
@@ -91,9 +91,9 @@ setup_own_ssl() {
         fi
     done
 
-    sudo cp -r $tmp_certificates_path/* $certificates_path/.
+    cp -r $tmp_certificates_path/* $certificates_path/.
 
-    sudo cat << EOF > /etc/nginx/sites-enabled/meilisearch
+    cat << EOF > /etc/nginx/sites-enabled/meilisearch
 server {
     listen 80 default_server;
     listen [::]:80 default_server;
@@ -137,7 +137,7 @@ EOF
 
 setup_ssl_certbot() {
     echo "Ok! Cool we'll setup SSL with Certbot";
-    sudo certbot --nginx --agree-tos --email info@meilisearch.com -q -d $domainname
+    certbot --nginx --agree-tos --email info@meilisearch.com -q -d $domainname
 }
 
 # Setup a master key for MeiliSearch
