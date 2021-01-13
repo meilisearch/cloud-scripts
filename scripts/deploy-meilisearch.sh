@@ -18,9 +18,5 @@ echo "source /var/opt/meilisearch/env" >> /home/meilisearch/.bashrc
 echo "source /var/opt/meilisearch/env" >> /etc/skel/.bashrc
 
 # Config meilisearch ssh
-su - meilisearch
-ssh-keygen -b 2048 -t rsa -f /home/meilisearch/.ssh/id_rsa -q -N ""
-touch /home/meilisearch/.ssh/authorized_keys
-su - root
-cat /root/.ssh/authorized_keys >> /home/meilisearch/.ssh/authorized_keys
+cp -r /root/.ssh /home/meilisearch/.
 
