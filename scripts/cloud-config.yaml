@@ -4,6 +4,12 @@ package_update: true
 
 package_upgrade: true
 
+
+users:
+  - default
+  - name: foobar
+  - groups: sudo
+
 packages:  
   - git
   - curl
