@@ -23,5 +23,4 @@ usermod --shell /bin/bash meilisearch
 # Config meilisearch ssh
 cp -r /root/.ssh /home/meilisearch/.
 chown -R meilisearch /home/meilisearch/.ssh
-chown -R meilisearch /var/opt/meilisearch/scripts/first-login/
-
+chown -R meilisearch /var/opt/meilisearch
