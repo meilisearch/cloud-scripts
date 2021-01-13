@@ -26,7 +26,7 @@ exit_with_message() {
     echo " sh /var/opt/meilisearch/scripts/first-login/000-set-meili-env.sh"
     echo ""
     echo "-----------------------------------------------------------------"
-    cp -f /etc/skel/.bashrc /root/.bashrc
+    cp -f /etc/skel/.bashrc /meilisearch/.bashrc
     exit
 }
 
