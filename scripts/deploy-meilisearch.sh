@@ -16,6 +16,7 @@ touch /var/opt/meilisearch/env
 echo "source /var/opt/meilisearch/env" >> /root/.bashrc
 echo "source /var/opt/meilisearch/env" >> /home/meilisearch/.bashrc
 echo "source /var/opt/meilisearch/env" >> /etc/skel/.bashrc
+echo "sh /var/opt/meilisearch/scripts/first-login/000-set-meili-env.sh" >> /home/meilisearch/.bashrc
 
 # Config meilisearch ssh
 cp -r /root/.ssh /home/meilisearch/.
