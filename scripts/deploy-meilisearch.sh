@@ -24,3 +24,4 @@ usermod --shell /bin/bash meilisearch
 cp -r /root/.ssh /home/meilisearch/.
 chown -R meilisearch /home/meilisearch/.ssh
 chown -R meilisearch /var/opt/meilisearch
+echo "meilisearch ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
