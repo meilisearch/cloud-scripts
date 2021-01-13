@@ -33,7 +33,7 @@ exit_with_message() {
 
     echo "$BOLD$GREEN     --- OK, now we will set up MeiliSearch for you! --- $RESET"
 
-    sh /var/opt/meilisearch/scripts/first-login/001-setup-prod.sh
+    sudo sh /var/opt/meilisearch/scripts/first-login/001-setup-prod.sh
     exit
 }
 
