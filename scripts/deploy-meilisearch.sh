@@ -19,4 +19,5 @@ echo "source /var/opt/meilisearch/env" >> /etc/skel/.bashrc
 
 # Config meilisearch ssh
 cp -r /root/.ssh /home/meilisearch/.
+chown -R meilisearch /home/meilisearch/.ssh
 
