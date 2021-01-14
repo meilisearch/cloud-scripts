@@ -58,7 +58,7 @@ write_files:
       # Empty
 
 runcmd:
-  - wget --directory-prefix=/usr/bin/ -O /usr/bin/meilisearch https://github.com/meilisearch/MeiliSearch/releases/download/v0.17.0/meilisearch-linux-amd64
+  - wget --directory-prefix=/usr/bin/ -O /usr/bin/meilisearch https://github.com/meilisearch/MeiliSearch/releases/download/v0.18.0/meilisearch-linux-amd64
   - chmod 755 /usr/bin/meilisearch
   - systemctl enable meilisearch.service
   - ufw --force enable

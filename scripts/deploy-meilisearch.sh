@@ -1,8 +1,9 @@
 # Copy MeiliSearch configuration scripts
 mkdir -p /var/opt/meilisearch/scripts/first-login
-git clone https://github.com/meilisearch/meilisearch-cloud.git /tmp/meili-tmp
-cd /tmp/meili-tmp
-# git checkout v0.17.0
+git clone https://github.com/meilisearch/cloud-scripts.git /tmp/meili-tmp
+cd /tmp/meili-tmp # DELETE?
+
+git checkout "$1"
 chmod 755 /tmp/meili-tmp/scripts/per-instance/*
 chmod 755 /tmp/meili-tmp/scripts/first-login/*
 chmod 755 /tmp/meili-tmp/scripts/MOTD/*

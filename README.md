@@ -1,5 +1,5 @@
-⚠️ WIP: meilisearch-cloud ⚠️
+⚠️ WIP: MeiliSearch Cloud Scripts ⚠️
 
-# meilisearch-cloud
+# MeiliSearch Cloud Scripts
 
 Cloud scripts for cloud provider agnostic configuration
