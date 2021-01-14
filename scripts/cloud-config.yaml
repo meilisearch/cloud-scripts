@@ -51,6 +51,8 @@ write_files:
           location / {
               proxy_pass  http://127.0.0.1:7700;
           }
+
+          client_max_body_size 100M;
       }
   
   - path: /etc/nginx/sites-enabled/default
