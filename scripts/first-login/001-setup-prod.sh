@@ -103,6 +103,8 @@ server {
     location / {
         proxy_pass  http://127.0.0.1:7700;
     }
+
+    client_max_body_size 100M;
 }
 server {
     server_name $domainname;
@@ -110,6 +112,8 @@ server {
     location / {
         proxy_pass  http://127.0.0.1:7700;
     }
+
+    client_max_body_size 100M;
 
     listen [::]:443 ssl ipv6only=on;
     listen 443 ssl;
@@ -125,12 +129,16 @@ EOF
 set_domain_name_in_nginx_no_ssl() {
     cat << EOF > /etc/nginx/sites-enabled/meilisearch
 server {
-listen 80 default_server;
-listen [::]:80 default_server;
-server_name $domainname;
-location / {
-    proxy_pass  http://127.0.0.1:7700;
-}
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    server_name $domainname;
+
+    location / {
+        proxy_pass  http://127.0.0.1:7700;
+    }
+
+    client_max_body_size 100M;
 }
 EOF
 }
