@@ -15,6 +15,7 @@ users:
     groups: [sudo]
   - name: root
     ssh_redirect_user: true
+    shell: /bin/bash
 
 packages:  
   - git
