@@ -14,7 +14,6 @@ users:
     shell: /bin/bash
     groups: [sudo]
   - name: root
-    ssh_redirect_user: true
     shell: /bin/bash
 
 packages:  
@@ -62,9 +61,6 @@ write_files:
       # Empty
 
 runcmd:
-  - sed -i -e '/^PermitRootLogin/s/^.*$/PermitRootLogin no/' /etc/ssh/sshd_config
-  - sed -i -e '$aAllowUsers meilisearch' /etc/ssh/sshd_config
-  - restart ssh
   - wget --directory-prefix=/usr/bin/ -O /usr/bin/meilisearch https://github.com/meilisearch/MeiliSearch/releases/download/v0.18.0/meilisearch-linux-amd64
   - chmod 755 /usr/bin/meilisearch
   - systemctl enable meilisearch.service
