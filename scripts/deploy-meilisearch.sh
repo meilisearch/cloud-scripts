@@ -17,7 +17,8 @@ touch /var/opt/meilisearch/env
 echo "source /var/opt/meilisearch/env" >> /root/.bashrc
 echo "source /var/opt/meilisearch/env" >> /home/meilisearch/.bashrc
 echo "source /var/opt/meilisearch/env" >> /etc/skel/.bashrc
-echo "sh /var/opt/meilisearch/scripts/first-login/000-set-meili-env.sh" >> /home/meilisearch/.bashrc
+echo "meilisearch-setup" >> /home/meilisearch/.bashrc
+echo "meilisearch-setup" >> /root/.bashrc
 usermod --shell /bin/bash root
 usermod --shell /bin/bash meilisearch
 
@@ -25,4 +26,3 @@ usermod --shell /bin/bash meilisearch
 cp -r /root/.ssh /home/meilisearch/.
 chown -R meilisearch /home/meilisearch/.ssh
 chown -R meilisearch /var/opt/meilisearch
-# echo "meilisearch ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
