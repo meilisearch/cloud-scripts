@@ -24,4 +24,3 @@ echo "                                                        ";
 echo "   To setup MeiliSearch use command: meilisearch-setup  ";
 echo "   ___________________________________________________  ";
 echo "                                                        ";
-apt list --upgradable
