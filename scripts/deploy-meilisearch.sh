@@ -19,8 +19,6 @@ echo "source /var/opt/meilisearch/env" >> /home/meilisearch/.bashrc
 echo "source /var/opt/meilisearch/env" >> /etc/skel/.bashrc
 echo "meilisearch-setup" >> /home/meilisearch/.bashrc
 echo "meilisearch-setup" >> /root/.bashrc
-usermod --shell /bin/bash root
-usermod --shell /bin/bash meilisearch
 
 # Config meilisearch ssh
 cp -r /root/.ssh /home/meilisearch/.

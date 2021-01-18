@@ -18,3 +18,10 @@ echo "    Documentation: https://docs.meilisearch.com         ";
 echo "    Sources: https://github.com/meilisearch/MeiliSearch ";
 echo "    Support: https://meilicommunity.slack.com           ";
 echo "                                                        ";
+echo "                                                        ";
+echo "   ___________________________________________________  ";
+echo "                                                        ";
+echo "   To setup MeiliSearch use command: meilisearch-setup  ";
+echo "   ___________________________________________________  ";
+echo "                                                        ";
+apt list --upgradable
