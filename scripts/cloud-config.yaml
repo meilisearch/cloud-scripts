@@ -7,7 +7,7 @@ package_upgrade: true
 
 users:
   - name: meilisearch
-    sudo: ALL=(ALL) NOPASSWD:ALL
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
     ssh_import_id: root
     lock_passwd: True
     gecos: Ubuntu
