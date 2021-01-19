@@ -23,10 +23,10 @@ exit_with_message() {
     echo ""
     echo "$BOLD If you want to run this script again, run the following command:$RESET"
     echo ""
-    echo " sh /var/opt/meilisearch/scripts/first-login/000-set-meili-env.sh"
+    echo " meilisearch-setup"
     echo ""
     echo "-----------------------------------------------------------------"
-    cp -f /etc/skel/.bashrc /home/meilisearch/.bashrc
+    sudo rm -rf /etc/profile.d/01-auto-run.sh
     exit
 }
 

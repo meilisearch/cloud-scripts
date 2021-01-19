@@ -6,14 +6,14 @@ package_upgrade: true
 
 
 users:
-  - default
   - name: meilisearch
-  - sudo: ALL=(ALL) NOPASSWD:ALL
-  - ssh_import_id: root
-  - lock_passwd: True
-  - gecos: Ubuntu
-  - shell: /bin/bash
-  - groups: [sudo, adm, audio, cdrom, dialout, floppy, video, plugdev, dip, netdev]
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh_import_id: root
+    lock_passwd: True
+    shell: /bin/bash
+    groups: [sudo]
+  - name: root
+    shell: /bin/bash
 
 packages:  
   - git
@@ -57,7 +57,15 @@ write_files:
   
   - path: /etc/nginx/sites-enabled/default
     content: |
-      # Empty
+      # Empty file
+
+  - path: /etc/profile.d/00-aliases.sh
+    content: |
+      alias meilisearch-setup='sh /var/opt/meilisearch/scripts/first-login/000-set-meili-env.sh'
+
+  - path: /etc/profile.d/01-auto-run.sh
+    content: |
+      meilisearch-setup
 
 runcmd:
   - wget --directory-prefix=/usr/bin/ -O /usr/bin/meilisearch https://github.com/meilisearch/MeiliSearch/releases/download/v0.18.1/meilisearch-linux-amd64
