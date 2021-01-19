@@ -26,8 +26,7 @@ exit_with_message() {
     echo " meilisearch-setup"
     echo ""
     echo "-----------------------------------------------------------------"
-    sed '/meilisearch-setup/d' /home/meilisearch/.bashrc >> /home/meilisearch/.bashrc
-    sed '/meilisearch-setup/d' /root/.bashrc >> /root/.bashrc
+    sudo rm -rf /etc/profile.d/01-auto-run.sh
     exit
 }
 
