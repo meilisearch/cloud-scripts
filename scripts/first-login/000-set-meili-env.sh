@@ -20,7 +20,9 @@ DOMAIN_NAME=""
 USE_SSL="false"
 USE_CERTBOT="false"
 
-. /var/opt/meilisearch/env
+if test -f "$FILE"; then
+    . /var/opt/meilisearch/env
+fi 
 
 exit_with_message() {
 
