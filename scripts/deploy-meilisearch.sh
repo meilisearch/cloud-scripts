@@ -19,6 +19,10 @@ echo "source /var/opt/meilisearch/env" >> /home/meilisearch/.bashrc
 echo "source /var/opt/meilisearch/env" >> /etc/skel/.bashrc
 
 # Config meilisearch ssh
-cp -r /root/.ssh /home/meilisearch/.
+if [ "$2" = "AWS" ]; then
+    cp -r /home/admin/.ssh /home/meilisearch/.
+else
+    cp -r /root/.ssh /home/meilisearch/.
+fi
 chown -R meilisearch /home/meilisearch/.ssh
 chown -R meilisearch /var/opt/meilisearch
