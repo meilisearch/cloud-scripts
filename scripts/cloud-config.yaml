@@ -62,7 +62,7 @@ write_files:
 
   - path: /etc/profile.d/00-aliases.sh
     content: |
-      alias meilisearch-setup='sh /var/opt/meilisearch/scripts/first-login/000-set-meili-env.sh'
+      alias meilisearch-setup='sudo sh /var/opt/meilisearch/scripts/first-login/000-set-meili-env.sh'
 
   - path: /etc/profile.d/01-auto-run.sh
     content: |
