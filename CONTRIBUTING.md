@@ -79,7 +79,16 @@ $ git push origin vX.X.X
  - [Test meilisearch-digitalocean](https://github.com/meilisearch/meilisearch-digitalocean/blob/master/CONTRIBUTING.md#release-process-for-internal-team-only)
  - [Test meilisearch-aws](https://github.com/meilisearch/meilisearch-aws/blob/main/CONTRIBUTING.md#release-process-for-internal-team-only)
 
+ 4. If you are testing a Release Candidate of MeiliSearch (`vX.X.XrcX`) version of MeiliSearch, please delete the tag after testing.
+
+ ```bash
+ $ git tag -d vX.X.XrcX
+ $ git push --delete origin vX.X.XrcX
+ ```
+
  ### Release
+
+⚠️ This process shoukdn't be followed when testing a `RC` version of MeiliSearch.
 
  1. Create a PR pointing to `main` branch and merge it.
 
