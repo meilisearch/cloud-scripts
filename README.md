@@ -19,7 +19,7 @@
 
 <p align="center">☁ MeiliSearch tools for the Cloud ☁</p>
 
-**MeiliSearch Cloud Scripts** is a set of tools and scripts to improve user deployment of MeiliSearch on the cloud.
+**MeiliSearch Cloud Scripts** is a set of cloud-agnostic tools and scripts to improve user deployment of MeiliSearch on the cloud.
 
 **MeiliSearch** is an open-source search engine. [Discover what MeiliSearch is!](https://github.com/meilisearch/MeiliSearch)
 
