@@ -23,7 +23,6 @@
 
 **MeiliSearch** is an open-source search engine. [Discover what MeiliSearch is!](https://github.com/meilisearch/MeiliSearch)
 
-
 ## Table of Contents <!-- omit in toc -->
 
 - [🎁 Content of this repository](#-content-of-this-repository)
@@ -33,18 +32,16 @@
 
 ## 🎁 Content of this repository
 
-This repository contains a few tools and scripts used mainly by the MeiliSearch team, aiming to provide our users simple ways to deploy and configure MeiliSearch in the cloud. As our heart resides on the Open Source community, we maintain several of this tools as open source repository.
+This repository contains a few tools and scripts used mainly by the MeiliSearch team, aiming to provide our users simple ways to deploy and configure MeiliSearch in the cloud. As our heart resides in the open-source community, we maintain several of these tools as open-source repositories.
 
 The goal of this repository is to provide a cloud-agnostic set of tools and scripts for deploying and configuring MeiliSearch.
 
 ## ☁ Projects using MeiliSearch Cloud Scripts
 
-
 | Cloud Provider   | Project |
 |----------|:-------------|
 | DigitalOcean |  [meilisearch-digitalocean](https://github.com/meilisearch/meilisearch-digitalocean/) |
 | AWS |  [meilisearch-aws](https://github.com/meilisearch/meilisearch-aws/) |
-
 
 ## 📖 Documentation
 
