@@ -61,7 +61,38 @@ It means that, for example, the `v0.17.0` tag in this repository corresponds to 
 This repository currently does not provide any automated way to test and release the cloud scripts.<br>
 **Please, follow carefully the steps in the next sections before any release.**
 
-[TO COMPLETE...]
+### Test before Releasing
+
+1. In [`scripts/cloud-config.yaml`](scripts/cloud-config.yaml), update the MeiliSearch version used in the `wget` command of the `runcmd` section. Use the version number that you want to release, in the format: `vX.X.X`. If you want to test with a MeiliSearch RC, replace it by the right RC version tag (`vX.X.XrcX`).
+
+2. Commit your changes on a new branch.
+
+3. Create a git tag on the last commit of your recently created branch:
+
+```bash
+$ git tag vX.X.X
+$ git push origin vX.X.X
+```
+
+3. Test the script: changes in this repository can not be tested by themselves. Other repositories, as [meilisearch-digitalocean](https://github.com/meilisearch/meilisearch-digitalocean/) or [meilisearch-aws](https://github.com/meilisearch/meilisearch-aws/) use this scripts to configure instances on the respective cloud provider. In order to test any changes in this repository, you need to run the tests of those repositories. For example:
+
+ - [Test meilisearch-digitalocean](https://github.com/meilisearch/meilisearch-digitalocean/blob/master/CONTRIBUTING.md#release-process-for-internal-team-only)
+ - [Test meilisearch-aws](https://github.com/meilisearch/meilisearch-aws/blob/main/CONTRIBUTING.md#release-process-for-internal-team-only)
+
+ ### Release
+
+ 1. Create a PR pointing to `main` branch and merge it.
+
+ 2. Move the tag to the last commit of the `main` branch.
+
+ ```bash
+ $ git tag -d vX.X.X
+ $ git push --delete origin vX.X.X
+ $ git checkout main
+ $ git pull origin main
+ $ git tag vX.X.X
+ $ git push origin vX.X.X
+```
 
 <hr>
 
