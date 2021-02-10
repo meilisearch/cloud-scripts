@@ -35,7 +35,7 @@
 
 This repository contains a few tools and scripts used mainly by the MeiliSearch team, aiming to provide our users simple ways to deploy and configure MeiliSearch in the cloud. As our heart resides on the Open Source community, we maintain several of this tools as open source repository.
 
-The goal of this repository is to provide a cloud-agnostic tools and scripts for deploying and configuring MeiliSearch.
+The goal of this repository is to provide a cloud-agnostic set of tools and scripts for deploying and configuring MeiliSearch.
 
 ## ☁ Projects using MeiliSearch Cloud Scripts
 
