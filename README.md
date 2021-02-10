@@ -39,8 +39,8 @@ The goal of this repository is to provide a cloud-agnostic tools and scripts for
 
 ## ☁ Projects using MeiliSearch Cloud Scripts
 
-☁ DigitalOcean => [meilisearch-digitalocean](https://github.com/meilisearch/meilisearch-digitalocean/)
-☁ AWS          => [meilisearch-aws](https://github.com/meilisearch/meilisearch-aws/)
+- DigitalOcean => [meilisearch-digitalocean](https://github.com/meilisearch/meilisearch-digitalocean/)  
+- AWS          => [meilisearch-aws](https://github.com/meilisearch/meilisearch-aws/)
 
 ## 📖 Documentation
 
