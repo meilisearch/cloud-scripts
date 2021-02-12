@@ -2,14 +2,10 @@
 
 First of all, thank you for contributing to MeiliSearch! The goal of this document is to provide everything you need to know in order to contribute to MeiliSearch and its different integrations.
 
-<!-- MarkdownTOC autolink="true" style="ordered" indent="   " -->
-
 - [Assumptions](#assumptions)
 - [How to Contribute](#how-to-contribute)
 - [Git Guidelines](#git-guidelines)
 - [Release Process (for internal team only)](#release-process-for-internal-team-only)
-
-<!-- /MarkdownTOC -->
 
 ## Assumptions
 
