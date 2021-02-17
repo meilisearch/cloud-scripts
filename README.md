@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/06cd71ec-35fb-41fc-9465-a2ae246e68d9/logo_img.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210210%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210210T165934Z&X-Amz-Expires=86400&X-Amz-Signature=f7df1f64d466328a798a8eec37e87f8539e5bed0aab4cede180db22bd5fa4395&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22logo_img.svg%22" alt="MeiliSearch CLoud scripts" width="200" height="200" />
+  <img src="logo_meilisearch.svg" alt="MeiliSearch Cloud scripts" width="200" height="200" />
 </p>
 
 <h1 align="center">MeiliSearch Cloud Scripts</h1>
