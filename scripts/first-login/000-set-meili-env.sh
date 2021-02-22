@@ -14,19 +14,21 @@ RESET="\033[0m"
 echo "\n\nThank you for using$BLUE MeiliSearch.$RESET\n\n"
 echo "This script will help you to set up some basic configuration.\n"
 
+MEILISEARCH_ENVIRONMENT="development"
 USE_API_KEY="false"
 MEILISEARCH_MASTER_KEY=""
 DOMAIN_NAME=""
 USE_SSL="false"
 USE_CERTBOT="false"
 
-if test -f "$FILE"; then
+if test -f "/var/opt/meilisearch/env"; then
     . /var/opt/meilisearch/env
 fi 
 
 exit_with_message() {
 
-    echo "export USE_API_KEY="$USE_API_KEY > /var/opt/meilisearch/env
+    echo "export MEILISEARCH_ENVIRONMENT="$MEILISEARCH_ENVIRONMENT > /var/opt/meilisearch/env
+    echo "export USE_API_KEY="$USE_API_KEY >> /var/opt/meilisearch/env
     echo "export MEILISEARCH_MASTER_KEY="$MEILISEARCH_MASTER_KEY >> /var/opt/meilisearch/env
     echo "export DOMAIN_NAME="$DOMAIN_NAME >> /var/opt/meilisearch/env
     echo "export USE_SSL="$USE_SSL >> /var/opt/meilisearch/env
@@ -143,9 +145,11 @@ fi
 ask_production_environment
 
 if [ $set_production_env = false ]; then
+    MEILISEARCH_ENVIRONMENT='development'
     echo "  MeiliSearch will be run in a DEVELOPMENT environment"
     ask_master_key_setup
 else
+    MEILISEARCH_ENVIRONMENT='production'
     echo "  MeiliSearch will be run in a PRODUCTION environment"
     echo "  MEILI_MASTER_KEY must be set for PRODUCTION"
     echo "  Front-end integrated dashboard will be disabled for PRODUCTION"
