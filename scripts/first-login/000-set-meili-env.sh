@@ -21,7 +21,7 @@ DOMAIN_NAME=""
 USE_SSL="false"
 USE_CERTBOT="false"
 
-if test -f "$FILE"; then
+if test -f "/var/opt/meilisearch/env"; then
     . /var/opt/meilisearch/env
 fi 
 
@@ -62,6 +62,9 @@ ask_master_key_setup() {
         esac
     done
 }
+
+echo MEILISEARCH_MASTER_KEY
+echo $MEILISEARCH_MASTER_KEY
 
 generate_master_key() {
     if [ "$MEILISEARCH_MASTER_KEY" != "" ]; then
