@@ -63,9 +63,6 @@ ask_master_key_setup() {
     done
 }
 
-echo MEILISEARCH_MASTER_KEY
-echo $MEILISEARCH_MASTER_KEY
-
 generate_master_key() {
     if [ "$MEILISEARCH_MASTER_KEY" != "" ]; then
         echo $BOLD$GREEN"A previous MEILI_MASTER_KEY has been detected. It was set to" $MEILISEARCH_MASTER_KEY$RESET
