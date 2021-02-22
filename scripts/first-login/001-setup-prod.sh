@@ -30,6 +30,24 @@ exit_with_message() {
     exit
 }
 
+setup_base_systemd_service_file() {
+    cat << EOF >/etc/systemd/system/meilisearch.service
+[Unit]
+Description=MeiliSearch
+After=systemd-user-sessions.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/meilisearch --db-path /var/lib/meilisearch/data.ms --env $MEILISEARCH_ENVIRONMENT
+Environment="MEILI_SERVER_PROVIDER=digital_ocean"
+
+[Install]
+WantedBy=default.target
+EOF
+systemctl daemon-reload
+systemctl restart meilisearch
+}
+
 configure_master_key() {
     cat << EOF >/etc/systemd/system/meilisearch.service
 [Unit]
@@ -147,6 +165,10 @@ setup_ssl_certbot() {
     echo "Ok! Cool we'll setup SSL with Certbot";
     certbot --nginx --agree-tos --email info@meilisearch.com -q -d $domainname
 }
+
+# Setup the baseline systemd service file
+
+setup_base_systemd_service_file()
 
 # Setup a master key for MeiliSearch
 
