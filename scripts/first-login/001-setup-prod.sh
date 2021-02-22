@@ -168,7 +168,7 @@ setup_ssl_certbot() {
 
 # Setup the baseline systemd service file
 
-setup_base_systemd_service_file()
+setup_base_systemd_service_file
 
 # Setup a master key for MeiliSearch
 
