@@ -42,6 +42,7 @@ The goal of this repository is to provide a cloud-agnostic set of tools and scri
 |----------|:-------------|
 | DigitalOcean |  [meilisearch-digitalocean](https://github.com/meilisearch/meilisearch-digitalocean/) |
 | AWS |  [meilisearch-aws](https://github.com/meilisearch/meilisearch-aws/) |
+| GCP |  [meilisearch-gcp](https://github.com/meilisearch/meilisearch-gcp/) |
 
 ## 📖 Documentation
 
