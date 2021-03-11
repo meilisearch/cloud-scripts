@@ -66,8 +66,8 @@ This repository currently does not provide any automated way to test and release
 3. Create a git tag on the last commit of your recently created branch:
 
 ```bash
-$ git tag vX.X.X
-$ git push origin vX.X.X
+git tag vX.X.X
+git push origin vX.X.X
 ```
 
 3. Test the script: changes in this repository can not be tested by themselves. Other repositories, as [meilisearch-digitalocean](https://github.com/meilisearch/meilisearch-digitalocean/) or [meilisearch-aws](https://github.com/meilisearch/meilisearch-aws/) use this scripts to configure instances on the respective cloud provider. In order to test any changes in this repository, you need to run the tests of those repositories. For example:
