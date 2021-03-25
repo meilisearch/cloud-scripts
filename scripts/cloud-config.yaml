@@ -36,7 +36,7 @@ write_files:
       [Service]
       Type=simple
       ExecStart=/usr/bin/meilisearch --db-path /var/lib/meilisearch/data.ms --env development
-      Environment="MEILI_SERVER_PROVIDER=digital_ocean"
+      Environment="MEILI_SERVER_PROVIDER=unknown_provider"
 
       [Install]
       WantedBy=default.target
