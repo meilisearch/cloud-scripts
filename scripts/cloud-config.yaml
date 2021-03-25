@@ -7,12 +7,6 @@ package_upgrade: true
 
 users:
   - default
-  - name: meilisearch
-    sudo: ['ALL=(ALL) NOPASSWD:ALL']
-    ssh_import_id: root
-    lock_passwd: True
-    shell: /bin/bash
-    groups: [sudo]
   - name: root
     shell: /bin/bash
 
