@@ -15,7 +15,8 @@ users:
   - name: root
     shell: /bin/bash
 
-packages:  
+packages:
+  - wget
   - git
   - curl
   - ufw
