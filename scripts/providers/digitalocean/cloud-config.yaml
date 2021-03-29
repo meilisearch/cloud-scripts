@@ -4,9 +4,14 @@ package_update: true
 
 package_upgrade: true
 
-
 users:
   - default
+  - name: meilisearch
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh_import_id: root
+    lock_passwd: True
+    shell: /bin/bash
+    groups: [sudo]
   - name: root
     shell: /bin/bash
 
@@ -30,7 +35,7 @@ write_files:
       [Service]
       Type=simple
       ExecStart=/usr/bin/meilisearch --db-path /var/lib/meilisearch/data.ms --env development
-      Environment="MEILI_SERVER_PROVIDER=unknown_provider"
+      Environment="MEILI_SERVER_PROVIDER=digitalocean"
 
       [Install]
       WantedBy=default.target
@@ -69,6 +74,9 @@ runcmd:
   - ufw --force enable
   - ufw allow 'Nginx Full'
   - ufw allow 'OpenSSH'
+  - curl https://raw.githubusercontent.com/meilisearch/cloud-scripts/v0.19.0/scripts/deploy-meilisearch.sh | bash -s v0.19.0
+  - curl https://raw.githubusercontent.com/digitalocean/marketplace-partners/master/scripts/90-cleanup.sh | bash
+  - curl https://raw.githubusercontent.com/digitalocean/marketplace-partners/master/scripts/99-img-check.sh | bash
 
 power_state:
   mode: reboot
