@@ -62,13 +62,13 @@ write_files:
       meilisearch-setup
 
 runcmd:
-  - wget --directory-prefix=/usr/bin/ -O /usr/bin/meilisearch https://github.com/meilisearch/MeiliSearch/releases/download/v0.20.0/meilisearch-linux-amd64
+  - wget --directory-prefix=/usr/bin/ -O /usr/bin/meilisearch https://github.com/meilisearch/MeiliSearch/releases/download/v0.21.0/meilisearch-linux-amd64
   - chmod 755 /usr/bin/meilisearch
   - systemctl enable meilisearch.service
   - ufw --force enable
   - ufw allow 'Nginx Full'
   - ufw allow 'OpenSSH'
-  - curl https://raw.githubusercontent.com/meilisearch/cloud-scripts/v0.20.0/scripts/deploy-meilisearch.sh | bash -s v0.20.0
+  - curl https://raw.githubusercontent.com/meilisearch/cloud-scripts/v0.21.0/scripts/deploy-meilisearch.sh | bash -s v0.20.0
   - curl https://raw.githubusercontent.com/digitalocean/marketplace-partners/master/scripts/90-cleanup.sh | bash
   - curl https://raw.githubusercontent.com/digitalocean/marketplace-partners/master/scripts/99-img-check.sh | bash
 
