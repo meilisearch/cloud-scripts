@@ -84,7 +84,7 @@ git push origin vX.X.X
 
  ### Release <!-- omit in TOC -->
 
-⚠️ This process shoukdn't be followed when testing a `RC` version of MeiliSearch.
+⚠️ This process shouldn't be followed when testing a `RC` version of MeiliSearch.
 
  1. Create a PR pointing to `main` branch and merge it.
 
