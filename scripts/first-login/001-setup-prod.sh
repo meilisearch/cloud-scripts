@@ -39,7 +39,7 @@ After=systemd-user-sessions.service
 [Service]
 Type=simple
 ExecStart=/usr/bin/meilisearch --db-path /var/lib/meilisearch/data.ms --env $MEILISEARCH_ENVIRONMENT
-Environment="MEILI_SERVER_PROVIDER=digital_ocean"
+Environment="MEILI_SERVER_PROVIDER=$MEILISEARCH_SERVER_PROVIDER"
 
 [Install]
 WantedBy=default.target
@@ -58,7 +58,7 @@ After=systemd-user-sessions.service
 Type=simple
 ExecStart=/usr/bin/meilisearch --db-path /var/lib/meilisearch/data.ms --env $MEILISEARCH_ENVIRONMENT
 Environment="MEILI_MASTER_KEY=$MEILISEARCH_MASTER_KEY"
-Environment="MEILI_SERVER_PROVIDER=digital_ocean"
+Environment="MEILI_SERVER_PROVIDER=$MEILISEARCH_SERVER_PROVIDER"
 
 [Install]
 WantedBy=default.target

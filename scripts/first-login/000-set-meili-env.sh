@@ -15,6 +15,7 @@ echo "\n\nThank you for using$BLUE MeiliSearch.$RESET\n\n"
 echo "This script will help you to set up some basic configuration.\n"
 
 MEILISEARCH_ENVIRONMENT="development"
+MEILISEARCH_SERVER_PROVIDER=provider_name
 USE_API_KEY="false"
 MEILISEARCH_MASTER_KEY=""
 DOMAIN_NAME=""
@@ -33,6 +34,7 @@ exit_with_message() {
     echo "export DOMAIN_NAME="$DOMAIN_NAME >> /var/opt/meilisearch/env
     echo "export USE_SSL="$USE_SSL >> /var/opt/meilisearch/env
     echo "export USE_CERTBOT="$USE_CERTBOT >> /var/opt/meilisearch/env
+    echo "export MEILISEARCH_SERVER_PROVIDER="$MEILISEARCH_SERVER_PROVIDER >> /var/opt/meilisearch/env
     . /var/opt/meilisearch/env
 
     echo "$BOLD$GREEN     --- OK, now we will set up MeiliSearch for you! --- $RESET"

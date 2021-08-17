@@ -68,7 +68,7 @@ runcmd:
   - ufw --force enable
   - ufw allow 'Nginx Full'
   - ufw allow 'OpenSSH'
-  - curl https://raw.githubusercontent.com/meilisearch/cloud-scripts/v0.21.0/scripts/deploy-meilisearch.sh | bash -s v0.21.0
+  - curl https://raw.githubusercontent.com/meilisearch/cloud-scripts/v0.21.0/scripts/deploy-meilisearch.sh | bash -s v0.21.0 aws
 
 power_state:
   mode: reboot
