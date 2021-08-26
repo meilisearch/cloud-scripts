@@ -12,7 +12,7 @@ echo "                                                        ";
 echo "________________________________________________        ";
 echo "________________________________________________        \e[39m";
 echo "                                                        ";
-echo "Welcome to your MeilSearch server                       ";
+echo "Welcome to your MeiliSearch server                      ";
 echo "                                                        ";
 echo "    Documentation: https://docs.meilisearch.com         ";
 echo "    Sources: https://github.com/meilisearch/MeiliSearch ";
