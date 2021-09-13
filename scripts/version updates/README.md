@@ -64,7 +64,13 @@ It is done by doing the following:
   - Restart MeiliSearch
 - Remove generated dump file.
 
+## Settings incompatibility
+
+If your settings are not compatible between versions, you will have to re-index your data as importing the dump will fail.
+
 ## Failure
+
+The latter might be cause because of an incompatibility of 
 
 In case of failure, please ensure your MeiliSearch is still running on `systemctl` by checking: 
 
