@@ -67,6 +67,7 @@ It is done by doing the following:
 ## Settings incompatibility
 
 If your settings are not compatible between versions, you will have to re-index your data as importing the dump will fail.
+For example if a setting change its name: `attributesForFaceting` becomes `filterableAttributes`. This will require a re-indexation.
 
 ## Failure
 
