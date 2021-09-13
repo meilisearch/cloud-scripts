@@ -61,7 +61,7 @@ It is done by doing the following:
 - If the start fails because versions are not compatible: 
   - Delete current data.ms
   - Import the previously created dump
-  - Restart MeiliSearc
+  - Restart MeiliSearch
 - Remove generated dump file.
 
 ## Failure
@@ -72,4 +72,11 @@ In case of failure, please ensure your MeiliSearch is still running on `systemct
 systemctl status meilisearch
 ```
 
-It is possible that the data was lost during the process, in which case indexation of your data should be done manually.
+In case it is not active, try restarting it manually: 
+
+```bash
+systemctl restart meilisearch
+```
+
+In case it still does not work, we suggest removing your `data.ms` located here `/var/lib/meilisearch/data.ms` and re-index your dataset manually.
+
