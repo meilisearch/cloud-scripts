@@ -34,20 +34,28 @@ systemctl status meilisearch
 To launch the script you should open the server using ssh and run the following command: 
 
 ```bash
-sh update_meilisearch_to_specific_version [MEILISEARCH VERSION]
+sh update_meilisearch_version meilisearch_version
 ```
+- meilisearch_version: The version should update to formated like this: `vX.X.X`
+  - example: `v.0.22.0`
 
 ### Example: 
 
+An official release: 
 ```bash
-sh update_meilisearch_to_specific_version v0.22.0
+sh update_meilisearch_version v0.22.0
 ```
 
-or an `rc`
+An `rc` release:
 
 ```bash
-sh update_meilisearch_to_specific_version v0.22.0rc1
+sh update_meilisearch_version v0.22.0rc1
 ```
+
+## Features
+
+- [Automatic Dumps](#automatic-dumps) export and import in case of version incompatibility.
+- Rollback in case of failure.
 
 ## Automatic Dumps
 
@@ -64,26 +72,16 @@ It is done by doing the following:
   - Restart MeiliSearch
 - Remove generated dump file.
 
+## Rollback in case of failure
+
+If something goes wrong during the version update process a rollback occurs:
+- The scripts rollback to the previous MeiliSearch version by using the previous cached meilisearch binary.
+- The previous `data.ms` is used and replaces the new one to ensure MeiliSearch works exactly as before the script was used.
+- MeiliSearch is started again.
+
 ## Settings incompatibility
 
 If your settings are not compatible between versions, you will have to re-index your data as importing the dump will fail.
 For example if a setting change its name: `attributesForFaceting` becomes `filterableAttributes`. This will require a re-indexation.
 
-## Failure
-
-The latter might be cause because of an incompatibility of 
-
-In case of failure, please ensure your MeiliSearch is still running on `systemctl` by checking: 
-
-```bash
-systemctl status meilisearch
-```
-
-In case it is not active, try restarting it manually: 
-
-```bash
-systemctl restart meilisearch
-```
-
-In case it still does not work, we suggest removing your `data.ms` located here `/var/lib/meilisearch/data.ms` and re-index your dataset manually.
-
+![](../../assets/version_update.gif)
