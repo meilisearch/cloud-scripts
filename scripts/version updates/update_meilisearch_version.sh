@@ -247,7 +247,7 @@ else
 
     # Needed conditions due to bug in MeiliSearch #1701
     if cat logs | grep "Error: No such file or directory (os error 2)" -q; then
-        # if dump was empty
+        # If dump was empty no import is needed
         echo "${SUCCESS_LABEL}Empty database! Importing of no data done."
     else
         echo "${INFO_LABEL}Check if local $meilisearch_version started correctly."
