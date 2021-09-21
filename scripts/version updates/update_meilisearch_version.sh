@@ -1,12 +1,8 @@
 #!/bin/bash
 
-## Args
-
-# Version to update MeiliSearch to.
-meilisearch_version=$1
-
 ## Constants
 
+RED="\033[0;31m"
 BRED="\033[1;31m"
 BGREEN="\033[1;32m"
 BYELLOW="\033[1;33m"
@@ -22,7 +18,9 @@ INFO_LABEL="${BBLUE}info: ${NC}"
 ## Utils Functions
 
 # Rollback to previous MeiliSearch version in case something went wrong
+
 previous_version_rollback() {
+
     echo "${ERROR_LABEL}MeiliSearch update to $meilisearch_version failed." >&2
     echo "${INFO_LABEL}Rollbacking to previous version ${BPINK}$current_meilisearch_version${NC}." >&2
     echo "${INFO_LABEL}Recovering..." >&2
@@ -119,6 +117,9 @@ systemctl_status exit
 
 # Check if version argument was provided on script launch
 check_args $# "MeiliSearch Version not provided as arg.\nUsage: sh update_meilisearch_version.sh [vX.X.X]"
+
+# Version to update MeiliSearch to.
+meilisearch_version=$1
 
 echo "${SUCCESS_LABEL}Requested MeiliSearch version: ${BPINK}$meilisearch_version${NC}."
 
