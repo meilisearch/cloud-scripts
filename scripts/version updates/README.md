@@ -43,7 +43,7 @@ sh update_meilisearch_version meilisearch_version
 
 An official release: 
 ```bash
-sh update_meilisearch_version v0.22.0
+sh update_meilisearch_version.sh v0.22.0
 ```
 
 An `rc` release:
