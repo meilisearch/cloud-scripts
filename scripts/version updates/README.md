@@ -49,7 +49,7 @@ sh update_meilisearch_version.sh v0.22.0
 An `rc` release:
 
 ```bash
-sh update_meilisearch_version v0.22.0rc1
+sh update_meilisearch_version.sh v0.22.0rc1
 ```
 
 ## Features
