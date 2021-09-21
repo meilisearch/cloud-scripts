@@ -118,7 +118,7 @@ echo "${SUCCESS_LABEL}Starting version update of MeiliSearch."
 systemctl_status exit
 
 # Check if version argument was provided on script launch
-check_args $# "MeiliSearch Version not provided as arg.\nUsage: sh update_release.sh [vX.X.X]"
+check_args $# "MeiliSearch Version not provided as arg.\nUsage: sh update_meilisearch_version.sh [vX.X.X]"
 
 echo "${SUCCESS_LABEL}Requested MeiliSearch version: ${BPINK}$meilisearch_version${NC}."
 
