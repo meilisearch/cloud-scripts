@@ -1,6 +1,6 @@
 # MeiliSearch version Updates
 
-This scripts lets you update your MeiliSearch instance to a specific version, including `rc's`.
+This script lets you update your MeiliSearch instance and all your data to a specific version, including the release candidates (`rcX`).
 
 ## Requirements
 
@@ -9,10 +9,10 @@ MeiliSearch must be running using `systemctl` and thus an environment in which `
 
 ### 2. data.ms path
 
-MeiliSearch `data.ms` must me stored at the following address: `/var/lib/meilisearch/data.ms`.
-  To ensure this is the case, MeiliSearch should have started with the following flags:`--db-path /var/lib/meilisearch/data.ms`
+The MeiliSearch's `data.ms` must be stored at the following address: `/var/lib/meilisearch/data.ms`.<br>
+To ensure this is the case, MeiliSearch should have started with the following flags:`--db-path /var/lib/meilisearch/data.ms`
 
-You can check the information by looking at the file located here `cat /etc/systemd/system/meilisearch.service`.
+You can check the information by looking at the file located here `cat /etc/systemd/system/meilisearch.service`.<br>
 You should find a line with the specific command used.
 
 ```bash
@@ -31,13 +31,12 @@ systemctl status meilisearch
 
 ⚠️ You may lose your data using this script, if you have no easy way to re-index it, we suggest manually [creating you own dump](https://docs.meilisearch.com/reference/features/dumps.html#creating-a-dump). 
 
-To launch the script you should open the server using ssh and run the following command: 
+To launch the script you should open the server using SSH and run the following command: 
 
 ```bash
 sh update_meilisearch_version meilisearch_version
 ```
-- meilisearch_version: The version should update to formated like this: `vX.X.X`
-  - example: `v.0.22.0`
+- `meilisearch_version`: the MeiliSearch version formatted like this: `vX.X.X`
 
 ### Example: 
 
@@ -46,7 +45,7 @@ An official release:
 sh update_meilisearch_version.sh v0.22.0
 ```
 
-An `rc` release:
+A release candidate:
 
 ```bash
 sh update_meilisearch_version.sh v0.22.0rc1
@@ -57,7 +56,7 @@ sh update_meilisearch_version.sh v0.22.0rc1
 - [Automatic Dumps](#automatic-dumps) export and import in case of version incompatibility.
 - Rollback in case of failure.
 
-## Automatic Dumps
+### Automatic Dumps
 
 The script is made to migrate the data properly in case the required version is not compatible with the current version.
 
@@ -67,15 +66,15 @@ It is done by doing the following:
 - Download and update MeiliSearch
 - Start MeiliSearch
 - If the start fails because versions are not compatible: 
-  - Delete current data.ms
+  - Delete current `data.ms`
   - Import the previously created dump
   - Restart MeiliSearch
 - Remove generated dump file.
 
-## Rollback in case of failure
+### Rollback in case of failure
 
 If something goes wrong during the version update process a rollback occurs:
-- The scripts rollback to the previous MeiliSearch version by using the previous cached meilisearch binary.
+- The script rolls back to the previous MeiliSearch version by using the previous cached MeiliSearch binary.
 - The previous `data.ms` is used and replaces the new one to ensure MeiliSearch works exactly as before the script was used.
 - MeiliSearch is started again.
 

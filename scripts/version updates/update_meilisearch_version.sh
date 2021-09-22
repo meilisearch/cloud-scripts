@@ -20,7 +20,6 @@ INFO_LABEL="${BBLUE}info: ${NC}"
 # Rollback to previous MeiliSearch version in case something went wrong
 
 previous_version_rollback() {
-
     echo "${ERROR_LABEL}MeiliSearch update to $meilisearch_version failed." >&2
     echo "${INFO_LABEL}Rollbacking to previous version ${BPINK}$current_meilisearch_version${NC}." >&2
     echo "${INFO_LABEL}Recovering..." >&2
@@ -116,7 +115,7 @@ echo "${SUCCESS_LABEL}Starting version update of MeiliSearch."
 systemctl_status exit
 
 # Check if version argument was provided on script launch
-check_args $# "MeiliSearch Version not provided as arg.\nUsage: sh update_meilisearch_version.sh [vX.X.X]"
+check_args $# "MeiliSearch version not provided as arg.\nUsage: sh update_meilisearch_version.sh [vX.X.X]"
 
 # Version to update MeiliSearch to.
 meilisearch_version=$1
