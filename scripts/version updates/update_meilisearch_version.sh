@@ -48,7 +48,6 @@ systemctl_status() {
         fi
 
         if [ ! -z "$callback_2" ]; then
-            2
             $callback_2
         fi
 
@@ -200,7 +199,7 @@ echo "${INFO_LABEL}Stopping MeiliSearch Service to update the version."
 ## Stop meilisearch running
 systemctl stop meilisearch # stop le service pour pouvoir changer la version
 
-## Move le nouveau binaire
+## Move the new binary
 echo "${INFO_LABEL}Keep a temporary copy of previous MeiliSearch."
 mv /usr/bin/meilisearch /tmp
 
