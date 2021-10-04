@@ -1,5 +1,6 @@
 # Copy MeiliSearch configuration scripts
 mkdir -p /var/opt/meilisearch/scripts/first-login
+mkdir /var/opt/meilisearch/dumps
 git clone https://github.com/meilisearch/cloud-scripts.git /tmp/meili-tmp
 cd /tmp/meili-tmp # DELETE?
 
