@@ -18,6 +18,7 @@ MEILISEARCH_ENVIRONMENT="development"
 MEILISEARCH_SERVER_PROVIDER=provider_name
 USE_API_KEY="false"
 MEILISEARCH_MASTER_KEY=""
+MEILI_DUMPS_DIR="/var/opt/meilisearch"
 DOMAIN_NAME=""
 USE_SSL="false"
 USE_CERTBOT="false"
@@ -31,6 +32,7 @@ exit_with_message() {
     echo "export MEILISEARCH_ENVIRONMENT="$MEILISEARCH_ENVIRONMENT > /var/opt/meilisearch/env
     echo "export USE_API_KEY="$USE_API_KEY >> /var/opt/meilisearch/env
     echo "export MEILISEARCH_MASTER_KEY="$MEILISEARCH_MASTER_KEY >> /var/opt/meilisearch/env
+    echo "export MEILI_DUMPS_DIR="$MEILI_DUMPS_DIR > /var/opt/meilisearch
     echo "export DOMAIN_NAME="$DOMAIN_NAME >> /var/opt/meilisearch/env
     echo "export USE_SSL="$USE_SSL >> /var/opt/meilisearch/env
     echo "export USE_CERTBOT="$USE_CERTBOT >> /var/opt/meilisearch/env

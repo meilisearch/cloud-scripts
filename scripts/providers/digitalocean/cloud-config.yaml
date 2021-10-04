@@ -28,7 +28,7 @@ write_files:
 
       [Service]
       Type=simple
-      ExecStart=/usr/bin/meilisearch --db-path /var/lib/meilisearch/data.ms --env development
+      ExecStart=/usr/bin/meilisearch --db-path /var/lib/meilisearch/data.ms --env development --dumps-dir MEILI_DUMPS_DIR
       Environment="MEILI_SERVER_PROVIDER=digitalocean"
 
       [Install]
