@@ -75,7 +75,7 @@ generate_master_key() {
         case $yn in
             [Yy]* ) keep_previous_master_key=true; break;;
             [Nn]* ) keep_previous_master_key=false; break;;
-            * ) echo '  Please answer by writting 'y' for yes or 'n' for no.';
+            * ) echo "  Please answer by writing 'y' for yes or 'n' for no.";
         esac
     done
     fi
