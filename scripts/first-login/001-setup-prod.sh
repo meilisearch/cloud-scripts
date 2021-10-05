@@ -23,7 +23,7 @@ exit_with_message() {
     echo ""
     echo "$BOLD If you want to run this script again, run the following command:$RESET"
     echo ""
-    echo "meilisearch-setup"
+    echo " meilisearch-setup"
     echo ""
     echo "-----------------------------------------------------------------"
     sudo rm -rf /etc/profile.d/01-auto-run.sh
