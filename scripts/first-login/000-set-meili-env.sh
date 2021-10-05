@@ -62,7 +62,7 @@ ask_master_key_setup() {
         case $yn in
             [Yy]* ) set_master_key=true; break;;
             [Nn]* ) set_master_key=false; break;;
-            * ) echo '  Please answer by writting 'y' for yes or 'n' for no.';
+            * ) echo "  Please answer by writing 'y' for yes or 'n' for no.";
         esac
     done
 }
