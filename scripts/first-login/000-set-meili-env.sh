@@ -121,7 +121,7 @@ ask_ssl_configure() {
         case $yn in
             [Yy]* ) want_ssl_certbot=true; break;;
             [Nn]* ) want_ssl_certbot=false; break;;
-            * ) echo '  Please answer by writting 'y' for yes or 'n' for no.';
+            * ) echo "  Please answer by writing 'y' for yes or 'n' for no.";
         esac
     done
 }
