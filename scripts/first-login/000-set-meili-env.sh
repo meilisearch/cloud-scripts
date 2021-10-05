@@ -51,7 +51,7 @@ ask_production_environment() {
         case $yn in
             [Yy]* ) set_production_env=true; set_master_key=true; break;;
             [Nn]* ) set_production_env=false; break;;
-            * ) echo '  Please answer by writting 'y' for yes or 'n' for no.';
+            * ) echo "  Please answer by writing 'y' for yes or 'n' for no.";
         esac
     done
 }
