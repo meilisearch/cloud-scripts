@@ -4,7 +4,7 @@ mkdir /var/opt/meilisearch/dumps
 git clone https://github.com/meilisearch/cloud-scripts.git /tmp/meili-tmp
 cd /tmp/meili-tmp # DELETE?
 
-git checkout '$1'
+git checkout "$1"
 chmod 755 /tmp/meili-tmp/scripts/first-login/*
 chmod 755 /tmp/meili-tmp/scripts/MOTD/*
 cp -r /tmp/meili-tmp/scripts/first-login/* /var/opt/meilisearch/scripts/first-login/.
