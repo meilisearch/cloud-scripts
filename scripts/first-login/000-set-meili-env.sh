@@ -173,7 +173,7 @@ fi
 ask_domain_name_setup
 
 if [ $ask_domain_name != true ]; then
-    DOMAIN_NAME=""
+    DOMAIN_NAME=''
     USE_SSL='false'
     USE_CERTBOT='false'
     exit_with_message
