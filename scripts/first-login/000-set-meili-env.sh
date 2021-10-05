@@ -100,7 +100,7 @@ ask_domain_name_setup() {
         case $yn in
             [Yy]* ) ask_domain_name=true; break;;
             [Nn]* ) ask_domain_name=false; break;;
-            * ) echo '  Please answer by writting 'y' for yes or 'n' for no.';;
+            * ) echo "  Please answer by writing 'y' for yes or 'n' for no.";;
         esac
     done
 }
