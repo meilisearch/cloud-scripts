@@ -4,22 +4,22 @@
 # This script will be installed in /var/opt/meilisearch/scripts/first-login
 # and will be run automatically when user logs via ssh
 
-GREEN='\033[32;11m'
-BLUE='\033[34;11m'
-YELLOW='\033[33;11m'
-RED='\033[31;11m'
-BOLD='\033[1m'
-RESET='\033[0m'
+GREEN="\033[32;11m"
+BLUE="\033[34;11m"
+YELLOW="\033[33;11m"
+RED="\033[31;11m"
+BOLD="\033[1m"
+RESET="\033[0m"
 
-echo '\n\nThank you for using$BLUE MeiliSearch.$RESET\n\n'
-echo 'This script will help you to set up some basic configuration.\n'
+echo "\n\nThank you for using$BLUE MeiliSearch.$RESET\n\n"
+echo "This script will help you to set up some basic configuration.\n"
 
 MEILISEARCH_ENVIRONMENT='development'
 MEILISEARCH_SERVER_PROVIDER=provider_name
 USE_API_KEY='false'
-MEILISEARCH_MASTER_KEY='
+MEILISEARCH_MASTER_KEY=''
 MEILI_DUMPS_DIR='/var/opt/meilisearch/dumps'
-DOMAIN_NAME='
+DOMAIN_NAME=''
 USE_SSL='false'
 USE_CERTBOT='false'
 
@@ -39,7 +39,7 @@ exit_with_message() {
     echo 'export MEILISEARCH_SERVER_PROVIDER='$MEILISEARCH_SERVER_PROVIDER >> /var/opt/meilisearch/env
     . /var/opt/meilisearch/env
 
-    echo '$BOLD$GREEN     --- OK, now we will set up MeiliSearch for you! --- $RESET'
+    echo "$BOLD$GREEN     --- OK, now we will set up MeiliSearch for you! --- $RESET"
 
     sudo sh /var/opt/meilisearch/scripts/first-login/001-setup-prod.sh
     exit
@@ -47,7 +47,7 @@ exit_with_message() {
 
 ask_production_environment() {
     while true; do
-        read -p '$(echo $BOLD$BLUE'Do you wish to use MeiliSearch in a PRODUCTION environment [y/n]?  '$RESET)' yn
+        read -p "$(echo $BOLD$BLUE"Do you wish to use MeiliSearch in a PRODUCTION environment [y/n]?  "$RESET)" yn
         case $yn in
             [Yy]* ) set_production_env=true; set_master_key=true; break;;
             [Nn]* ) set_production_env=false; break;;
@@ -58,7 +58,7 @@ ask_production_environment() {
 
 ask_master_key_setup() {
     while true; do
-        read -p '$(echo $BOLD$BLUE'Do you wish to use a MEILI_MASTER_KEY for your search engine [y/n]?  '$RESET)' yn
+        read -p "$(echo $BOLD$BLUE"Do you wish to use a MEILI_MASTER_KEY for your search engine [y/n]?  "$RESET)" yn
         case $yn in
             [Yy]* ) set_master_key=true; break;;
             [Nn]* ) set_master_key=false; break;;
@@ -68,10 +68,10 @@ ask_master_key_setup() {
 }
 
 generate_master_key() {
-    if [ '$MEILISEARCH_MASTER_KEY' != ' ]; then
+    if [ "$MEILISEARCH_MASTER_KEY" != "" ]; then
         echo $BOLD$GREEN'A previous MEILI_MASTER_KEY has been detected. It was set to' $MEILISEARCH_MASTER_KEY$RESET
         while true; do
-        read -p '$(echo $BOLD$BLUE'Do you wish to keep using this MEILI_MASTER_KEY for your search engine [y/n]?  '$RESET)' yn
+        read -p "$(echo $BOLD$BLUE"Do you wish to keep using this MEILI_MASTER_KEY for your search engine [y/n]?  "$RESET)" yn
         case $yn in
             [Yy]* ) keep_previous_master_key=true; break;;
             [Nn]* ) keep_previous_master_key=false; break;;
@@ -79,16 +79,16 @@ generate_master_key() {
         esac
     done
     fi
-    if [ '$keep_previous_master_key' = true ]; then
+    if [ "$keep_previous_master_key" = true ]; then
         api_key=$MEILISEARCH_MASTER_KEY
-        echo '$BOLD keeping your old MEILI_MASTER_KEY $RESET'
+        echo "$BOLD keeping your old MEILI_MASTER_KEY $RESET"
         return
     fi
     while true; do
-        read -p '$(echo $BOLD$BLUE'Do you wish to specify your MEILI_MASTER_KEY (otherwise it will be generated) [y/n]? '$RESET)' yn
+        read -p "$(echo $BOLD$BLUE"Do you wish to specify your MEILI_MASTER_KEY (otherwise it will be generated) [y/n]? "$RESET)" yn
         case $yn in
             [Yy]* ) read -p 'MEILI_MASTER_KEY: ' api_key; break;;
-            [Nn]* ) api_key=$(date +%s | sha256sum | base64 | head -c 32); echo 'You MEILI_MASTER_KEY is $api_key'; echo 'You should keep it somewhere safe.'; break;;
+            [Nn]* ) api_key=$(date +%s | sha256sum | base64 | head -c 32); echo "You MEILI_MASTER_KEY is $api_key"; echo 'You should keep it somewhere safe.'; break;;
             * ) echo '  Please answer by writting 'y' for yes or 'n' for no.';;
         esac
     done
@@ -96,7 +96,7 @@ generate_master_key() {
 
 ask_domain_name_setup() {
     while true; do
-        read -p '$(echo $BOLD$BLUE'Do you wish to setup a domain name [y/n]? '$RESET)' yn
+        read -p "$(echo $BOLD$BLUE"Do you wish to setup a domain name [y/n]? "$RESET)" yn
         case $yn in
             [Yy]* ) ask_domain_name=true; break;;
             [Nn]* ) ask_domain_name=false; break;;
@@ -107,9 +107,9 @@ ask_domain_name_setup() {
 
 ask_domain_name_input() {
     while true; do
-        read -p '$(echo $BOLD$BLUE'What is your domain name? '$RESET)' domainname
+        read -p "$(echo $BOLD$BLUE"What is your domain name? "$RESET)" domainname
         case $domainname in
-            ' ) echo '  Please enter a valid domain name';;
+            "" ) echo '  Please enter a valid domain name';;
             * ) break;;
         esac
     done
@@ -117,7 +117,7 @@ ask_domain_name_input() {
 
 ask_ssl_configure() {
     while true; do
-        read -p '$(echo $BOLD$BLUE'Do you wish to setup ssl with certbot (free and automated HTTPS) [y/n]? '$RESET)' yn
+        read -p "$(echo $BOLD$BLUE"Do you wish to setup ssl with certbot (free and automated HTTPS) [y/n]? "$RESET)" yn
         case $yn in
             [Yy]* ) want_ssl_certbot=true; break;;
             [Nn]* ) want_ssl_certbot=false; break;;
@@ -128,7 +128,7 @@ ask_ssl_configure() {
 
 ask_has_own_ssl() {
     while true; do
-        read -p '$(echo $BOLD$BLUE'Do you wish to provide your own SSL certificate [y/n]? '$RESET)' yn
+        read -p "$(echo $BOLD$BLUE"Do you wish to provide your own SSL certificate [y/n]? "$RESET)" yn
         case $yn in
             [Yy]* ) has_own_ssl=true; break;;
             [Nn]* ) has_own_ssl=false; break;;
@@ -139,7 +139,7 @@ ask_has_own_ssl() {
 
 # This let's us avoid asking user for input and set production environment from Mmetadata
 
-if [ '$MEILI_SKIP_USER_INPUT' = 'true' ]; then
+if [ "$MEILI_SKIP_USER_INPUT" = 'true' ]; then
     . /var/opt/meilisearch/env
     sh /var/opt/meilisearch/scripts/first-login/001-setup-prod.sh
 fi
@@ -165,7 +165,7 @@ if [ $set_master_key = true ]; then
     MEILISEARCH_MASTER_KEY=$api_key
 else
     USE_API_KEY='false'
-    MEILISEARCH_MASTER_KEY='
+    MEILISEARCH_MASTER_KEY=""
 fi
 
 # Ask user if he wants to setup a domain name for MeiliSearch
@@ -173,7 +173,7 @@ fi
 ask_domain_name_setup
 
 if [ $ask_domain_name != true ]; then
-    DOMAIN_NAME='
+    DOMAIN_NAME=""
     USE_SSL='false'
     USE_CERTBOT='false'
     exit_with_message
