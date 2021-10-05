@@ -132,7 +132,7 @@ ask_has_own_ssl() {
         case $yn in
             [Yy]* ) has_own_ssl=true; break;;
             [Nn]* ) has_own_ssl=false; break;;
-            * ) echo '  Please answer by writting 'y' for yes or 'n' for no.';
+            * ) echo "  Please answer by writing 'y' for yes or 'n' for no.";
         esac
     done
 }
