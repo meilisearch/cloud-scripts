@@ -14,6 +14,6 @@ rm -rf /tmp/meili-tmp
 
 # Set launch MeiliSearch first login script
 touch /var/opt/meilisearch/env
-echo "source /var/opt/meilisearch/env" >> /root/.bashrc
-echo "source /var/opt/meilisearch/env" >> /home/meilisearch/.bashrc
-echo "source /var/opt/meilisearch/env" >> /etc/skel/.bashrc
+echo 'source /var/opt/meilisearch/env' >> /root/.bashrc
+echo 'source /var/opt/meilisearch/env' >> /home/meilisearch/.bashrc
+echo 'source /var/opt/meilisearch/env' >> /etc/skel/.bashrc

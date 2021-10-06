@@ -84,7 +84,7 @@ setup_own_ssl() {
     # ask for SERVER CERTIFICATE
     echo $BOLD$BLUE"Please write here (copy/paste) your SERVER CERTIFICATE (.pem): "$RESET"\n"
     while IFS= read -r line; do
-        printf '%s\n' "$line" >> $tmp_certificates_path/$server_crt_path
+        printf "%s\n" "$line" >> $tmp_certificates_path/$server_crt_path
         if [ "$line" = "" ]; then
             break;
         fi
@@ -94,7 +94,7 @@ setup_own_ssl() {
     echo $BOLD$BLUE"Please write here (copy/paste) your INTERMEDIATE CERTIFICATE (.pem): "$RESET"\n"
     echo $BOLD$BLUE"(Leave empty to ignore)\n"$RESET
     while IFS= read -r line; do
-        printf '%s\n' "$line" >> $tmp_certificates_path/$server_crt_path
+        printf "%s\n" "$line" >> $tmp_certificates_path/$server_crt_path
         if [ "$line" = "" ]; then
             break;
         fi
@@ -103,7 +103,7 @@ setup_own_ssl() {
     # ask for PRIVATE KEY
     echo $BOLD$BLUE"Please write here (copy/paste) your PRIVATE KEY (.key): "$RESET"\n"
     while IFS= read -r line; do
-        printf '%s\n' "$line" >> $tmp_certificates_path/$private_key_crt_path
+        printf "%s\n" "$line" >> $tmp_certificates_path/$private_key_crt_path
         if [ "$line" = "" ]; then
             break;
         fi
@@ -195,7 +195,7 @@ domainname=$DOMAIN_NAME
 # Setup an SSL configuration for MeiliSearch
 
 if [ "$USE_SSL" = false ]; then
-    echo "  No SSL Configuration"
+    echo '  No SSL Configuration'
     set_domain_name_in_nginx_no_ssl
     exit_with_message
 fi
