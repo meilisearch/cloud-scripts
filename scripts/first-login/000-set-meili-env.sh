@@ -88,7 +88,7 @@ generate_master_key() {
         read -p "$(echo $BOLD$BLUE"Do you wish to specify your MEILI_MASTER_KEY (otherwise it will be generated) [y/n]? "$RESET)" yn
         case $yn in
             [Yy]* ) read -p 'MEILI_MASTER_KEY: ' api_key; break;;
-            [Nn]* ) api_key=$(date +%s | sha256sum | base64 | head -c 32); echo "You MEILI_MASTER_KEY is $api_key"; echo 'You should keep it somewhere safe.'; break;;
+            [Nn]* ) api_key=$(date +%s | sha256sum | base64 | head -c 32); echo "Your MEILI_MASTER_KEY is $api_key"; echo 'You should keep it somewhere safe.'; break;;
             * ) echo "  Please answer by writing 'y' for yes or 'n' for no.";;
         esac
     done
