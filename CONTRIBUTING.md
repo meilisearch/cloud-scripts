@@ -1,6 +1,6 @@
 # Contributing <!-- omit in TOC -->
 
-First of all, thank you for contributing to MeiliSearch! The goal of this document is to provide everything you need to know in order to contribute to MeiliSearch and its different integrations.
+First of all, thank you for contributing to meilisearch! The goal of this document is to provide everything you need to know in order to contribute to meilisearch and its different integrations.
 
 - [Assumptions](#assumptions)
 - [How to Contribute](#how-to-contribute)
@@ -10,8 +10,8 @@ First of all, thank you for contributing to MeiliSearch! The goal of this docume
 ## Assumptions
 
 1. **You're familiar with [GitHub](https://github.com) and the [Pull Request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests)(PR) workflow.**
-2. **You've read the MeiliSearch [documentation](https://docs.meilisearch.com) and the [README](/README.md).**
-3. **You know about the [MeiliSearch community](https://docs.meilisearch.com/resources/contact.html). Please use this for help.**
+2. **You've read the meilisearch [documentation](https://docs.meilisearch.com) and the [README](/README.md).**
+3. **You know about the [meilisearch community](https://docs.meilisearch.com/resources/contact.html). Please use this for help.**
 
 ## How to Contribute
 
@@ -51,15 +51,15 @@ Some notes on GitHub PRs:
 
 ## Release Process (for internal team only)
 
-The release tags of this package follow exactly the MeiliSearch versions.<br>
-It means that, for example, the `v0.17.0` tag in this repository corresponds to the scripts for deploying MeiliSearch `v0.17.0`.
+The release tags of this package follow exactly the meilisearch versions.<br>
+It means that, for example, the `v0.17.0` tag in this repository corresponds to the scripts for deploying meilisearch `v0.17.0`.
 
 This repository currently does not provide any automated way to test and release the cloud scripts.<br>
 **Please, follow carefully the steps in the next sections before any release.**
 
 ### Test before Releasing <!-- omit in TOC -->
 
-1. In [`scripts/cloud-config.yaml`](scripts/cloud-config.yaml), update the MeiliSearch version used in the `wget` command of the `runcmd` section. Use the version number that you want to release, in the format: `vX.X.X`. If you want to test with a MeiliSearch RC, replace it by the right RC version tag (`vX.X.XrcX`).
+1. In [`scripts/cloud-config.yaml`](scripts/cloud-config.yaml), update the meilisearch version used in the `wget` command of the `runcmd` section. Use the version number that you want to release, in the format: `vX.X.X`. If you want to test with a meilisearch RC, replace it by the right RC version tag (`vX.X.XrcX`).
 
 2. Commit your changes on a new branch.
 
@@ -75,7 +75,7 @@ git push origin vX.X.X
  - [Test meilisearch-digitalocean](https://github.com/meilisearch/meilisearch-digitalocean/blob/main/CONTRIBUTING.md#release-process-for-internal-team-only)
  - [Test meilisearch-aws](https://github.com/meilisearch/meilisearch-aws/blob/main/CONTRIBUTING.md#release-process-for-internal-team-only)
 
- 4. If you are testing a Release Candidate of MeiliSearch (`vX.X.XrcX`) version of MeiliSearch, please delete the tag after testing.
+ 4. If you are testing a Release Candidate of meilisearch (`vX.X.XrcX`) version of meilisearch, please delete the tag after testing.
 
  ```bash
  $ git tag -d vX.X.XrcX
@@ -84,7 +84,7 @@ git push origin vX.X.X
 
  ### Release <!-- omit in TOC -->
 
-⚠️ This process shouldn't be followed when testing a `RC` version of MeiliSearch.
+⚠️ This process shouldn't be followed when testing a `RC` version of meilisearch.
 
  1. Create a PR pointing to `main` branch and merge it.
 
