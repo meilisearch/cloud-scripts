@@ -1,4 +1,4 @@
-# Copy MeiliSearch configuration scripts
+# Copy Meilisearch configuration scripts
 mkdir -p /var/opt/meilisearch/scripts/first-login
 mkdir /var/opt/meilisearch/dumps
 git clone https://github.com/meilisearch/cloud-scripts.git /tmp/meili-tmp
@@ -12,7 +12,7 @@ sed -i "s/provider_name/$2/" /var/opt/meilisearch/scripts/first-login/000-set-me
 cp -r /tmp/meili-tmp/scripts/MOTD/* /etc/update-motd.d/.
 rm -rf /tmp/meili-tmp
 
-# Set launch MeiliSearch first login script
+# Set launch Meilisearch first login script
 touch /var/opt/meilisearch/env
 echo 'source /var/opt/meilisearch/env' >> /root/.bashrc
 echo 'source /var/opt/meilisearch/env' >> /home/meilisearch/.bashrc

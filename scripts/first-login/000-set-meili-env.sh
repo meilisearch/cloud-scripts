@@ -11,7 +11,7 @@ RED="\033[31;11m"
 BOLD="\033[1m"
 RESET="\033[0m"
 
-echo "\n\nThank you for using$BLUE MeiliSearch.$RESET\n\n"
+echo "\n\nThank you for using$BLUE Meilisearch.$RESET\n\n"
 echo "This script will help you to set up some basic configuration.\n"
 
 MEILISEARCH_ENVIRONMENT='development'
@@ -39,7 +39,7 @@ exit_with_message() {
     echo 'export MEILISEARCH_SERVER_PROVIDER='$MEILISEARCH_SERVER_PROVIDER >> /var/opt/meilisearch/env
     . /var/opt/meilisearch/env
 
-    echo "$BOLD$GREEN     --- OK, now we will set up MeiliSearch for you! --- $RESET"
+    echo "$BOLD$GREEN     --- OK, now we will set up Meilisearch for you! --- $RESET"
 
     sudo sh /var/opt/meilisearch/scripts/first-login/001-setup-prod.sh
     exit
@@ -47,7 +47,7 @@ exit_with_message() {
 
 ask_production_environment() {
     while true; do
-        read -p "$(echo $BOLD$BLUE"Do you wish to use MeiliSearch in a PRODUCTION environment [y/n]?  "$RESET)" yn
+        read -p "$(echo $BOLD$BLUE"Do you wish to use Meilisearch in a PRODUCTION environment [y/n]?  "$RESET)" yn
         case $yn in
             [Yy]* ) set_production_env=true; set_master_key=true; break;;
             [Nn]* ) set_production_env=false; break;;
@@ -144,17 +144,17 @@ if [ "$MEILI_SKIP_USER_INPUT" = 'true' ]; then
     sh /var/opt/meilisearch/scripts/first-login/001-setup-prod.sh
 fi
 
-# Ask user if he wants to setup a master key for MeiliSearch
+# Ask user if he wants to setup a master key for Meilisearch
 
 ask_production_environment
 
 if [ $set_production_env = false ]; then
     MEILISEARCH_ENVIRONMENT='development'
-    echo '  MeiliSearch will be run in a DEVELOPMENT environment'
+    echo '  Meilisearch will be run in a DEVELOPMENT environment'
     ask_master_key_setup
 else
     MEILISEARCH_ENVIRONMENT='production'
-    echo '  MeiliSearch will be run in a PRODUCTION environment'
+    echo '  Meilisearch will be run in a PRODUCTION environment'
     echo '  MEILI_MASTER_KEY must be set for PRODUCTION'
     echo '  Front-end integrated dashboard will be disabled for PRODUCTION'
 fi
@@ -168,7 +168,7 @@ else
     MEILISEARCH_MASTER_KEY=""
 fi
 
-# Ask user if he wants to setup a domain name for MeiliSearch
+# Ask user if he wants to setup a domain name for Meilisearch
 
 ask_domain_name_setup
 
@@ -183,7 +183,7 @@ ask_domain_name_input
 
 DOMAIN_NAME=$domainname
 
-# Ask user if he wants to setup an SSL configuration for MeiliSearch
+# Ask user if he wants to setup an SSL configuration for Meilisearch
 # [certbot or own SSL]
 
 ask_ssl_configure

@@ -33,7 +33,7 @@ exit_with_message() {
 setup_base_systemd_service_file() {
     cat << EOF >/etc/systemd/system/meilisearch.service
 [Unit]
-Description=MeiliSearch
+Description=Meilisearch
 After=systemd-user-sessions.service
 
 [Service]
@@ -51,7 +51,7 @@ systemctl restart meilisearch
 configure_master_key() {
     cat << EOF >/etc/systemd/system/meilisearch.service
 [Unit]
-Description=MeiliSearch
+Description=Meilisearch
 After=systemd-user-sessions.service
 
 [Service]
@@ -170,7 +170,7 @@ setup_ssl_certbot() {
 
 setup_base_systemd_service_file
 
-# Setup a master key for MeiliSearch
+# Setup a master key for Meilisearch
 
 if [ "$USE_API_KEY" = "true" ]; then
     echo ""
@@ -184,7 +184,7 @@ if [ "$USE_API_KEY" = "true" ]; then
     configure_master_key
 fi
 
-# Setup a domain name for MeiliSearch
+# Setup a domain name for Meilisearch
 
 if [ "$DOMAIN_NAME" = "" ]; then
     exit_with_message
@@ -192,7 +192,7 @@ fi
 
 domainname=$DOMAIN_NAME
 
-# Setup an SSL configuration for MeiliSearch
+# Setup an SSL configuration for Meilisearch
 
 if [ "$USE_SSL" = false ]; then
     echo '  No SSL Configuration'
