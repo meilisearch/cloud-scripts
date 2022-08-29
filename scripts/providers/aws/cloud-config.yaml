@@ -62,13 +62,13 @@ write_files:
       meilisearch-setup
 
 runcmd:
-  - wget --directory-prefix=/usr/bin/ -O /usr/bin/meilisearch https://github.com/meilisearch/meilisearch/releases/download/v0.28.1/meilisearch-linux-amd64
+  - wget --directory-prefix=/usr/bin/ -O /usr/bin/meilisearch https://github.com/meilisearch/meilisearch/releases/download/v0.29.0rc0/meilisearch-linux-amd64
   - chmod 755 /usr/bin/meilisearch
   - systemctl enable meilisearch.service
   - ufw --force enable
   - ufw allow 'Nginx Full'
   - ufw allow 'OpenSSH'
-  - curl https://raw.githubusercontent.com/meilisearch/cloud-scripts/v0.28.1/scripts/deploy-meilisearch.sh | bash -s v0.28.1 aws
+  - curl https://raw.githubusercontent.com/meilisearch/cloud-scripts/v0.29.0-rc/scripts/deploy-meilisearch.sh | bash -s v0.28.1 aws
 
 power_state:
   mode: reboot
