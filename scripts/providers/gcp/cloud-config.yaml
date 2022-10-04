@@ -16,7 +16,7 @@ packages:
   - ufw
   - gcc
   - make
-  - nginx-light
+  - nginx-core
   - certbot
   - python-certbot-nginx
 
