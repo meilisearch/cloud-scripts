@@ -10,12 +10,12 @@ users:
     shell: /bin/bash
 
 packages:  
-  - nginx
   - git
   - curl
   - ufw
   - gcc
   - make
+  - nginx
   - certbot
   - python-certbot-nginx
 
@@ -69,9 +69,9 @@ runcmd:
   - ufw --force enable
   - ufw allow 'Nginx Full'
   - ufw allow 'OpenSSH'
-  - curl https://raw.githubusercontent.com/meilisearch/cloud-scripts/v0.29.0-rc/scripts/deploy-meilisearch.sh | bash -s v0.29.0 digitalocean
-  # - curl https://raw.githubusercontent.com/digitalocean/marketplace-partners/master/scripts/90-cleanup.sh | bash
-  # - curl https://raw.githubusercontent.com/digitalocean/marketplace-partners/master/scripts/99-img-check.sh | bash
+  - curl https://raw.githubusercontent.com/meilisearch/cloud-scripts/v0.29.0/scripts/deploy-meilisearch.sh | bash -s v0.29.0 digitalocean
+  - curl https://raw.githubusercontent.com/digitalocean/marketplace-partners/master/scripts/90-cleanup.sh | bash
+  - curl https://raw.githubusercontent.com/digitalocean/marketplace-partners/master/scripts/99-img-check.sh | bash
 
 power_state:
   mode: reboot

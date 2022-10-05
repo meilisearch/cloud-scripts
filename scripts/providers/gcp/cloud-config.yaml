@@ -16,7 +16,7 @@ packages:
   - ufw
   - gcc
   - make
-  - nginx-core
+  - nginx
   - certbot
   - python-certbot-nginx
 
@@ -70,7 +70,7 @@ runcmd:
   - ufw --force enable
   - ufw allow 'Nginx Full'
   - ufw allow 'OpenSSH'
-  - curl https://raw.githubusercontent.com/meilisearch/cloud-scripts/v0.29.0-rc/scripts/deploy-meilisearch.sh | bash -s v0.29.0 gcp
+  - curl https://raw.githubusercontent.com/meilisearch/cloud-scripts/v0.29.0/scripts/deploy-meilisearch.sh | bash -s v0.29.0 gcp
 
 power_state:
   mode: reboot
