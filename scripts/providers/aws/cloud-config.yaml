@@ -62,6 +62,7 @@ write_files:
       meilisearch-setup
 
 runcmd:
+  - apt install nginx -y
   - wget --directory-prefix=/usr/bin/ -O /usr/bin/meilisearch https://github.com/meilisearch/meilisearch/releases/download/v0.29.0/meilisearch-linux-amd64
   - chmod 755 /usr/bin/meilisearch
   - systemctl enable meilisearch.service
