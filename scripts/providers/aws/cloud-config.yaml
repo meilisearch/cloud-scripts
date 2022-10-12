@@ -30,6 +30,8 @@ write_files:
       Type=simple
       ExecStart=/usr/bin/meilisearch --db-path /var/lib/meilisearch/data.ms --env development --dumps-dir MEILI_DUMPS_DIR
       Environment="MEILI_SERVER_PROVIDER=aws"
+      Restart=on-failure
+      RestartSec=5s
 
       [Install]
       WantedBy=default.target
