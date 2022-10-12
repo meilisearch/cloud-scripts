@@ -16,3 +16,5 @@ rm -rf /tmp/meili-tmp
 touch /var/opt/meilisearch/env
 echo 'source /var/opt/meilisearch/env' >> /root/.bashrc
 echo 'source /var/opt/meilisearch/env' >> /etc/skel/.bashrc
+
+locale-gen utf-8
