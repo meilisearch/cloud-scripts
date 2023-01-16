@@ -38,8 +38,9 @@ After=systemd-user-sessions.service
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/meilisearch --db-path /var/lib/meilisearch/data.ms --env $MEILISEARCH_ENVIRONMENT --dumps-dir $MEILI_DUMPS_DIR
 Environment="MEILI_SERVER_PROVIDER=$MEILISEARCH_SERVER_PROVIDER"
+Environment="MEILI_DUMP_DIR=$MEILI_DUMP_DIR"
+ExecStart=/usr/bin/meilisearch --db-path /var/lib/meilisearch/data.ms --env $MEILISEARCH_ENVIRONMENT --dump-dir $MEILI_DUMP_DIR
 
 [Install]
 WantedBy=default.target
@@ -56,9 +57,10 @@ After=systemd-user-sessions.service
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/meilisearch --db-path /var/lib/meilisearch/data.ms --env $MEILISEARCH_ENVIRONMENT --dumps-dir $MEILI_DUMPS_DIR
 Environment="MEILI_MASTER_KEY=$MEILISEARCH_MASTER_KEY"
 Environment="MEILI_SERVER_PROVIDER=$MEILISEARCH_SERVER_PROVIDER"
+Environment="MEILI_DUMP_DIR=$MEILI_DUMP_DIR"
+ExecStart=/usr/bin/meilisearch --db-path /var/lib/meilisearch/data.ms --env $MEILISEARCH_ENVIRONMENT --dump-dir $MEILI_DUMP_DIR
 
 [Install]
 WantedBy=default.target
