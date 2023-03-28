@@ -66,13 +66,13 @@ write_files:
 
 runcmd:
   - apt-get purge droplet-agent* -y
-  - wget --directory-prefix=/usr/bin/ -O /usr/bin/meilisearch https://github.com/meilisearch/meilisearch/releases/download/v1.1.0-rc.0-rc.0-rc.0/meilisearch-linux-amd64
+  - wget --directory-prefix=/usr/bin/ -O /usr/bin/meilisearch https://github.com/meilisearch/meilisearch/releases/download/v1.1.0-rc.1/meilisearch-linux-amd64
   - chmod 755 /usr/bin/meilisearch
   - systemctl enable meilisearch.service
   - ufw --force enable
   - ufw allow 'Nginx Full'
   - ufw allow 'OpenSSH'
-  - curl https://raw.githubusercontent.com/meilisearch/cloud-scripts/v1.1.0-rc-rc-rc/scripts/deploy-meilisearch.sh | bash -s v1.1.0 digitalocean
+  - curl https://raw.githubusercontent.com/meilisearch/cloud-scripts/v1.1.0-rc.1/scripts/deploy-meilisearch.sh | bash -s v1.1.0 digitalocean
   - curl https://raw.githubusercontent.com/digitalocean/marketplace-partners/master/scripts/90-cleanup.sh | bash
   - curl https://raw.githubusercontent.com/digitalocean/marketplace-partners/master/scripts/99-img-check.sh | bash
 
