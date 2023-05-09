@@ -2,7 +2,7 @@
   <img src="https://github.com/meilisearch/integration-guides/blob/main/assets/logos/logo.svg" alt="Meilisearch Cloud scripts" width="200" height="200" />
 </p>
 
-<h1 align="center">Meilisearch Cloud Scripts</h1>
+<h1 align="center">[DEPRECATED] Meilisearch Cloud Scripts</h1>
 
 <h4 align="center">
   <a href="https://github.com/meilisearch/meilisearch">Meilisearch</a> |
@@ -18,6 +18,13 @@
 </p>
 
 <p align="center">☁ Meilisearch tools for the Cloud ☁</p>
+
+
+---------
+
+⚠️ **Please note that this repository is no longer being maintained and has been deprecated. We have created this new repository [cloud-providers](https://github.com/meilisearch/cloud-providers) instead.**
+
+---------
 
 **Meilisearch Cloud Scripts** is a set of cloud-agnostic tools and scripts to improve user deployment of Meilisearch on the cloud.
 
